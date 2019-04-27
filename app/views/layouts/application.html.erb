@@ -14,7 +14,7 @@
     <header class="row">
    
       <div class="col-3">
-
+        <%= link_to root_path, class: 'logo' do %>
         <div class="circle">
           <br />
           CAN
@@ -23,7 +23,7 @@
           <br />
           RELATE?
         </div>
-
+        <% end %>
       </div>
 
       <div class="col-4 slogan">
@@ -31,7 +31,7 @@
       </div>
 
       <div class="col-5 links">
-        <%= link_to 'Share a Quote', '#' %>
+        <%= link_to 'Share a Quote', new_quote_path %>
         <%= link_to 'About', '#' %>
       </div>
 
@@ -51,7 +51,7 @@
       
       <div class="col-6 footer-blurb">
         
-        <%= link_to "Splurting out relationship advise 24/7", "#", class: 'next-quote' %>
+        <%= link_to "Splurting out relationship advise 24/7", root_path, class: 'next-quote' %>
 
       </div>
 
