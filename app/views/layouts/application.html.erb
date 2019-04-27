@@ -12,7 +12,6 @@
   <body>
    
     <header class="row">
-   
       <div class="col-3">
         <%= link_to root_path, class: 'logo' do %>
         <div class="circle">
@@ -26,15 +25,15 @@
         <% end %>
       </div>
 
-      <div class="col-4 slogan">
+      <div class="col col-4 hidden-xs-down slogan">
         Relationship advise for the soul!
       </div>
 
       <div class="col-5 links">
         <%= link_to 'Contribute', '#', data: {toggle: 'modal', target: '#myModal'} %>
+        &nbsp; &nbsp;
         <%= link_to 'About Us', about_path %>
       </div>
-
     </header>
 
     <!-- Modal -->
@@ -50,8 +49,9 @@
           <%= simple_form_for Quote.new do |f| %>          
           <div class="modal-body">
             
-              <%= f.input :saying %>
-              <%= f.input :author %>
+              <%= f.input :saying, label: "Please type the quote you'd like to add:", placeholder: "quote" %>
+              <br />
+              <%= f.input :author, label: "Who is the author?", placeholder: "author" %>
 
           </div>
           <div class="modal-footer">
@@ -76,22 +76,18 @@
   <%= yield %>
 </div>
 
-       <footer class="footer">
-      
-      <div class="col-6 footer-blurb">
-        
-        <%= link_to "Relationship advise for the soul!", root_path, class: 'next-quote' %>
-
+       <div class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-6">
+              <%= link_to "Relationship advise for the soul!", root_path, class: 'next-quote' %>
+            </div>
+            <div class="col-12 col-6 footer-blurb">
+              Built by <a href="https://stallonedias.netlify.com/">Stallone Dias</a><br />
+              Want to build your own Splurty Web App? - <a href="https://online.bootcampspot.com">Click here</a>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <br />
-
-       <div class="col-6 footer-blurb">
-        Built by <a href="https://stallonedias.netlify.com/">Stallone Dias</a><br />
-        Want to build your own Splurty Web App? - <a href="https://online.bootcampspot.com">Learn how to code here</a>
-      </div>
-
-    </footer>
-
-  </body>
-</html>
+    </body>
+    </html>
